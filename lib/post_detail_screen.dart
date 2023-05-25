@@ -41,50 +41,48 @@ class PostDetailScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const PostHeader(),
-                    PostContent(),
-                    SizedBox(
-                      width: double.infinity,
-                      child: Image.asset(
-                        "assets/product.jpg",
-                        fit: BoxFit.cover,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const PostHeader(),
+                  PostContent(),
+                  SizedBox(
+                    width: double.infinity,
+                    child: Image.asset(
+                      "assets/product.jpg",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  const ButtonRow(),
+                  const Divider(),
+                  const Comments(),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      prefixIcon: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Image.asset(
+                          "assets/image.png",
+                          width: 24,
+                          height: 24,
+                        ),
+                      ),
+                      suffix: const Padding(
+                        padding: EdgeInsets.only(right: 16.0),
+                        child: Text(
+                          "등록",
+                          style: TextStyle(
+                            color: Color(0xff919EB6),
+                          ),
+                        ),
+                      ),
+                      hintText: "댓글을 남겨주세요.",
+                      hintStyle: const TextStyle(
+                        color: Color(0xffAFB9CA),
+                        fontSize: 12,
                       ),
                     ),
-                    const ButtonRow(),
-                    const Divider(),
-                    const Comments(),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        prefixIcon: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Image.asset(
-                            "assets/image.png",
-                            width: 24,
-                            height: 24,
-                          ),
-                        ),
-                        suffix: const Padding(
-                          padding: EdgeInsets.only(right: 16.0),
-                          child: Text(
-                            "등록",
-                            style: TextStyle(
-                              color: Color(0xff919EB6),
-                            ),
-                          ),
-                        ),
-                        hintText: "댓글을 남겨주세요.",
-                        hintStyle: const TextStyle(
-                          color: Color(0xffAFB9CA),
-                          fontSize: 12,
-                        ),
-                      ),
-                    )
-                  ],
-                ),
+                  )
+                ],
               )
             ],
           ),
